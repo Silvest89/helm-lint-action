@@ -1,0 +1,15 @@
+name: 'Helm Push'
+description: ''
+inputs:
+  lintChart:
+    description: ''
+    required: true       
+  values:
+    description: ''
+    required: true           
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+  - ${{ inputs.lintChart }}
+  - ${{ inputs.values }}
